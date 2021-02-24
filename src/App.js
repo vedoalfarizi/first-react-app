@@ -1,25 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import { Switch, Route } from 'react-router-dom'
+import Home from './Pages/Home'
+import Dashboard from './Pages/Dashboard'
+import About from './Pages/About'
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Switch>
+      <Route path="/" exact component={Home} />
+      <Route path="/dashboard" exact component={Dashboard} />
+      <Route path="/about" exact component={About} />
+      <Route component={NotFound} />
+    </Switch>
   );
 }
 
 export default App;
+
+export function NotFound() {
+  return(
+    <div>
+      Halaman Not Found
+    </div>
+  );
+}
