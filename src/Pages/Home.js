@@ -5,7 +5,7 @@ export default function Home(){
   return(
     <div>
       Halaman Home
-      <Button to='/dashboard' name='Dashboard'/>
+      <Button/>
       <Button to='/about' name='About'/>
     </div>
   );
